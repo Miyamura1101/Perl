@@ -2,20 +2,23 @@ print "Olá, Mundo!\n";
 
 # Declaração de variaveis
 
-$nome = "Felipe";
-$idade = 20;
-$altura = 1.8;
+my $nome = "Felipe";
+my $idade;
+my $altura = 1.8;
 
 print "Nome: $nome, Idade: $idade, Altura: $altura metros\n";
 
 # Arrays
+
 print "-----------\n";
 
-@frutas = ("Maçã", "Banana", "Laranja");
+@frutas = ("Maçã", "Banana", "Laranja", 1, 'a');
 
 print "Segunda fruta: $frutas[1]\n";
 print "Primeira fruta: $frutas[0]\n";
 print "Terceira fruta: $frutas[2]\n";
+print "Quata: $frutas[3]\n";
+print "Quinta: $frutas[4]\n";
 
 # Hashes  / {chave => valor} / {'chave'}
 
@@ -67,9 +70,9 @@ print "-----------\n";
 sauda("Felipe");
 
 sub sauda {
-    my ($nome) = @_; # paramentros da função
-    my ($idade) = 20;
-    print "Olá, $nome e eu tenho $idade anos\n";
+    my ($no) = @_; # paramentros da função
+    my ($ida) = 20;
+    print "Olá, $no e eu tenho $ida anos \n";
 }
 
 
@@ -98,3 +101,33 @@ while(<$arquivo>) # Usado para ler linha a linha
     print $_; # Lê todadas a linhas;
 }
 close($arquivo);
+
+my @nome = ("José", "Luiz", "João");
+my @nomeA = ("Felipe", "Bia", "Hevellyn", "Alana");
+my $ultimo = pop @nome;
+
+print $ultimo;  # João
+print @nome;    # José, Luiz
+
+push @nome, $ultimo; 
+print @nome;    # José, Luiz, João
+
+my $primeiro = shift @nome;
+
+print $primeiro; # José
+print @nome;     # Luiz, João
+
+unshift @nome, @nomeA;
+
+print @nome;     # Felipe, Bia, Hevellny, Alana, Luiz, João
+
+
+%pessoa = (
+        1 => "Felipe", 
+        2 => "João", 
+        15 => "Marcos",
+        3 => "Maria"
+);
+
+print $pessoa{1};   # Felipe
+print $pessoa{15};  # Marcos
