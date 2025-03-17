@@ -1,10 +1,13 @@
+use strict; # Informa a necesidade de utilizar o my / our
+
 print "Olá, Mundo!\n";
 
 # Declaração de variaveis
 
 my $nome = "Felipe";
-my $idade;
+our $idade = 20;
 my $altura = 1.8;
+
 
 print "Nome: $nome, Idade: $idade, Altura: $altura metros\n";
 
@@ -12,7 +15,7 @@ print "Nome: $nome, Idade: $idade, Altura: $altura metros\n";
 
 print "-----------\n";
 
-@frutas = ("Maçã", "Banana", "Laranja", 1, 'a');
+my @frutas = ("Maçã", "Banana", "Laranja", 1, 'a');
 
 print "Segunda fruta: $frutas[1]\n";
 print "Primeira fruta: $frutas[0]\n";
@@ -24,7 +27,7 @@ print "Quinta: $frutas[4]\n";
 
 print "-----------\n";
 
-%pessoa = ("nome" => "Felipe", "idade" => 20);
+my %pessoa = ("nome" => "Felipe", "idade" => 20);
 
 print "Nome: $pessoa{'nome'}, Idade: $pessoa{'idade'}\n";
 
@@ -42,14 +45,14 @@ if($idade >= 18)
 
 print "-----------\n";
 
-for($i = 0; $i <=6; $i++)
+for(my $i = 0; $i <=6; $i++)
 {
     print "I = $i\n";
 }
 
 print "-----------\n";
 
-$i = 0;
+my $i = 0;
 while($i <= 5)
 {
     print "Contado = $i\n";
@@ -58,7 +61,7 @@ while($i <= 5)
 
 print "-----------\n";
 
-foreach $fruta (@frutas)
+foreach my $fruta (@frutas)
 {
     print "Fruta: $fruta\n";
 }
@@ -75,7 +78,6 @@ sub sauda {
     print "Olá, $no e eu tenho $ida anos \n";
 }
 
-
 print "-----------\n";
 
 # Entrada de Usuario
@@ -88,46 +90,47 @@ print "Olá, $nome\n";
 
 # Arquivos
 
+my $arquivo_saida = "saida.txt";
+
 # '>' -> mostra que o arquivo está sendo aberto para escrita
 # Sobreescreve os dados do arquivo
-open(my $arquivo, ">", "saida.txt") or die "Erro ao abrir o arquivo";
+open(my $arquivo, ">", $arquivo_saida) or die "Erro ao abrir o arquivo";
 print $arquivo "Olá, mundo dos arquivo de texto\n";
 close($arquivo);
 
 # '<' -> mostrar que o arquivo está sendo aberto para leitura
-open(my $arquivo, "<", "saida.txt") or die "Erro ao abrir o arquivo";
+open(my $arquivo, "<", $arquivo_saida) or die "Erro ao abrir o arquivo";
 while(<$arquivo>) # Usado para ler linha a linha
 {
     print $_; # Lê todadas a linhas;
 }
 close($arquivo);
 
-my @nome = ("José", "Luiz", "João");
-my @nomeA = ("Felipe", "Bia", "Hevellyn", "Alana");
-my $ultimo = pop @nome;
+# my @nome = ("José", "Luiz", "João");
+# my @nomeA = ("Felipe", "Bia", "Hevellyn", "Alana");
+# my $ultimo = pop @nome;
 
-print $ultimo;  # João
-print @nome;    # José, Luiz
+# print $ultimo;  # João
+# print @nome;    # José, Luiz
 
-push @nome, $ultimo; 
-print @nome;    # José, Luiz, João
+# push @nome, $ultimo; 
+# print @nome;    # José, Luiz, João
 
-my $primeiro = shift @nome;
+# my $primeiro = shift @nome;
 
-print $primeiro; # José
-print @nome;     # Luiz, João
+# print $primeiro; # José
+# print @nome;     # Luiz, João
 
-unshift @nome, @nomeA;
+# unshift @nome, @nomeA;
 
-print @nome;     # Felipe, Bia, Hevellny, Alana, Luiz, João
+# print @nome;     # Felipe, Bia, Hevellny, Alana, Luiz, João
 
+# %pessoa = (
+#         1 => "Felipe", 
+#         2 => "João", 
+#         15 => "Marcos",
+#         3 => "Maria"
+# );
 
-%pessoa = (
-        1 => "Felipe", 
-        2 => "João", 
-        15 => "Marcos",
-        3 => "Maria"
-);
-
-print $pessoa{1};   # Felipe
-print $pessoa{15};  # Marcos
+# print $pessoa{1};   # Felipe
+# print $pessoa{15};  # Marcos
