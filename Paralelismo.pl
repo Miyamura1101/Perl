@@ -1,7 +1,6 @@
 use strict;
 use warnings;
 
-# Número de processos filhos a serem criados
 my $num_processos = 5;
 my @somas;
 
@@ -10,30 +9,32 @@ pipe(my $leitura, my $escrita) or die "Falha ao criar o pipe: $!";
 
 for (1..$num_processos) {
     my $pid = fork();
-    
+   
     if (!defined $pid) {
         die "Falha ao criar o processo: $!";
     }
     elsif ($pid == 0) {
 
         close $leitura;  # Fecha a extremidade de leitura do pipe
-        
+       
         my $num1 = int(rand(10)) + 1;  # Número aleatório entre 1 e 10
         my $num2 = int(rand(10)) + 1;
         my $soma = $num1 + $num2;
-        
+       
         print "Processo $_ (PID: $$) Soma: $num1 + $num2 = $soma\n";
-        
+  # PID -> Id do Processo 
+  # $$ -> Retorna o PID do projeto em questão
+       
+        # Enviar resultado para o processo 
         print $escrita "$soma\n";
-        
-        close $escrita;  # Fecha a extremidade de escrita do pipe
-        exit; 
+       
+        close $escrita;  # Fecha a extremidade de escrita
+        exit;
     }
 }
+close $escrita;  # O processo pai fecha a extremidade de escrita
 
-close $escrita;  # O processo inical fecha pra escrita
-
-# O processo incial lê os resultados do pipe
+# O processo pai lê os resultados
 while (my $resultado = <$leitura>) {
     push @somas, $resultado;
 }
