@@ -22,8 +22,8 @@ for (1..$num_processos) {
         my $soma = $num1 + $num2;
        
         print "Processo $_ (PID: $$) Soma: $num1 + $num2 = $soma\n";
-  # PID -> Id do Processo 
-  # $$ -> Retorna o PID do projeto em questão
+        # PID -> Id do Processo 
+        # $$ -> Retorna o PID do projeto em questão
        
         # Enviar resultado para o processo 
         print $escrita "$soma\n";
