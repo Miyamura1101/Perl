@@ -14,13 +14,17 @@ sub atualizar_palavra {
     while (1) {
         my $letra = getc(STDIN);
 
-        if($letra eq "\x7F")  # Backspace
+        if($letra eq "\x7F" || $letra eq "\x08")  # Backspace
         {   
             chop $entrada if length($entrada) > 0;
         }else
         {
             $entrada .= $letra;
         }
+
+        print "$entrada";
+        
+        print "\n";
 
         $queue->enqueue($entrada); 
     }
