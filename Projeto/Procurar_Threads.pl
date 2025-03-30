@@ -1,5 +1,5 @@
 use strict;
-use warnings;
+use open qw(:std :utf8);    # para não bugar com os acentos
 use threads;
 use Thread::Queue;
 use Term::ReadKey;
@@ -14,14 +14,14 @@ sub atualizar_palavra {
     while (1) {
         my $letra = getc(STDIN);
 
-        if($letra eq "\x7F" || $letra eq "\b")  # Backspace
+        if($letra eq "\x7F")  # Backspace
         {   
             chop $entrada if length($entrada) > 0;
         }else
         {
             $entrada .= $letra;
         }
-        
+
         $queue->enqueue($entrada); 
     }
 }
