@@ -11,7 +11,7 @@ mãe todo toda todos todas);
 
 my %frequencia;  # Hash com a frequencia das palavras
 
-open(my $arq, "<", "Texto") or die "Falha ao abrir o arquivo";
+open(my $arq, "<", "/home/felipe/Perl/Projeto/Texto") or die "Falha ao abrir o arquivo";
 
 while(my $linha = <$arq>)
 {

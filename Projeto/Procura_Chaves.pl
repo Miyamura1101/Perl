@@ -12,7 +12,7 @@ mãe todo toda todos todas);
 
 my %frequencia;
 
-open(my $arq, "<", "Texto") or die "Erro ao abrir o arquivo: $!";
+open(my $arq, "<", "/home/felipe/Perl/Projeto/Texto") or die "Erro ao abrir o arquivo: $!";
 my @linhas;
 
 while (my $linha = <$arq>) {

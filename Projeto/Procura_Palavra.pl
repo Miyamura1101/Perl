@@ -1,7 +1,7 @@
 use strict;
 
-my $Destaque = "A";
-open(my $arq, "<", "Texto") or die "Falha ao abrir o arquivo";
+my $Destaque = "um";
+open(my $arq, "<", "/home/felipe/Perl/Projeto/Texto") or die "Falha ao abrir o arquivo";
 
 while(my $linha = <$arq>)
 {
