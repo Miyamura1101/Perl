@@ -2,15 +2,27 @@ use strict;
 use warnings;
 use threads;
 use Thread::Queue;
+use Term::ReadKey;
 
 my $Destaque = ""; 
 my $queue = Thread::Queue->new();  
 
 sub atualizar_palavra {
+    my $entrada = "";
+    ReadMode('cbreak');
+
     while (1) {
-        my $nova_palavra = <STDIN>;
-        chomp $nova_palavra;
-        $queue->enqueue($nova_palavra);
+        my $letra = getc(STDIN);
+
+        if($letra eq "\x7F" || $letra eq "\b")  # Backspace
+        {   
+            chop $entrada if length($entrada) > 0;
+        }else
+        {
+            $entrada .= $letra;
+        }
+        
+        $queue->enqueue($entrada); 
     }
 }
 
@@ -21,14 +33,15 @@ sub processar_texto {
         $Destaque = $queue->dequeue();
 
         open(my $arq, "<", "/home/felipe/Perl/Projeto/Texto") or die "Falha ao abrir o arquivo";
+
         while (my $linha = <$arq>) {
-            $linha =~ s/\b($Destaque)\b/\e[1;31m$1\e[0m/gi if $Destaque ne "";
+            $linha =~ s/($Destaque)/\e[1;31m$1\e[0m/gi;
             print $linha;
         }
         print "\n";
         close($arq);
 
-        sleep(2);  # Pequeno delay para não sobrecarregar
+        sleep(0.5);
     }
 }
 
