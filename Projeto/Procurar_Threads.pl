@@ -20,7 +20,6 @@ sub atualizar_palavra {
         }
         else
         {
-            
             $entrada .= $letra;
         }
 
@@ -49,8 +48,6 @@ sub processar_texto {
         }
         print "\n";
         close($arq);
-
-        sleep(0.5);
     }
 }
 
