@@ -14,17 +14,21 @@ sub atualizar_palavra {
     while (1) {
         my $letra = getc(STDIN);
 
-        if($letra eq "\x7F" || $letra eq "\x08")  # Backspace
+        if($letra eq "\x7F" || $letra eq "\x08")  # Backspace -> "\x7F" Linux / "\x08" Windows
         {   
             chop $entrada if length($entrada) > 0;
-        }else
+        }
+        else
         {
+            
             $entrada .= $letra;
         }
 
-        print "$entrada";
-        
-        print "\n";
+        system("clear");
+
+        print "------------------\n";
+        print "Entrada: $entrada";
+        print "\n------------------\n";
 
         $queue->enqueue($entrada); 
     }
@@ -33,13 +37,14 @@ sub atualizar_palavra {
 # Thread 2: Processa o texto continuamente e imprime a busca destacada
 sub processar_texto {
     while (1) {
-
+    
         $Destaque = $queue->dequeue();
 
         open(my $arq, "<", "/home/felipe/Perl/Projeto/Texto") or die "Falha ao abrir o arquivo";
 
         while (my $linha = <$arq>) {
-            $linha =~ s/($Destaque)/\e[1;31m$1\e[0m/gi;
+
+            $linha =~ s/(\Q$Destaque\E)/\e[1;31m$1\e[0m/gi;
             print $linha;
         }
         print "\n";
