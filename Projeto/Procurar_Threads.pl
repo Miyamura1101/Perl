@@ -5,7 +5,7 @@ use Thread::Queue;
 use Term::ReadKey;
 use Config;
 
-my $windows = $^0 =~ /MSWin32/;
+my $windows = $^O =~ /MSWin32/; # Windows
 
 my $Destaque = ""; 
 my $queue = Thread::Queue->new();  
