@@ -7,7 +7,7 @@ contigo conosco para perante por perante através um uma uns umas que quem cujo 
 é são está estão era eram na nas no nos os as não ou sim certamente ao aos mais maior maioria mas porém contudo todavia cada qualquer que faz
 isso isto aquele aquela aqueles aquelas há havia sob sobre durante entre após antes desde contra perante até bem mal pouco poucos com por qual 
 pouca poucas muito muitos muita muitas então depois ainda quando enquanto porque seja sendo fui foi fomos foram me te se nos vos lhe lhes quais
-mãe todo toda todos todas);
+mãe todo toda todos todas algum alguma alguns algumas);
 
 my %frequencia;  # Hash com a frequencia das palavras
 

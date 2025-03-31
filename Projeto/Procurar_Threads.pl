@@ -3,13 +3,16 @@ use open qw(:std :utf8);    # para não bugar com os acentos
 use threads;
 use Thread::Queue;
 use Term::ReadKey;
+use Config;
+
+my $windows = $^0 =~ /MSWin32/;
 
 my $Destaque = ""; 
 my $queue = Thread::Queue->new();  
 
 sub atualizar_palavra {
     my $entrada = "";
-    ReadMode('cbreak');
+    ReadMode(4);
 
     while (1) {
         my $letra = getc(STDIN);
@@ -23,7 +26,7 @@ sub atualizar_palavra {
             $entrada .= $letra;
         }
 
-        system("clear");
+        system($windows ? "cls" : "clear");
 
         print "------------------\n";
         print "Entrada: $entrada";
