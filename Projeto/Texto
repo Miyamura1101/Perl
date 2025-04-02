@@ -1,5 +1,75 @@
-Uma das ferramentas que eu considero mais poderosas no manuseio de informações de texto são as chamadas expressões regulares, que na prática definem um padrão de formação de alguma informação e, de posse desse padrão, tentando-se “casar” informações com ela. Caso o padrão seja encontrado dentro desse conteúdo, alguma ação é tomada e o processamento segue adiante.
-
-O exemplo prático que sempre gosto de dar é o de CEP, que sempre possui a mesma forma: cinco números, traço, outros três números, algo como 99999-999. Esse formato pode ser utilizado para procurar, dentro de um texto ou outra string qualquer, números de CEP que foram inseridos e que se deseja encontrar agora, para fazer alguma coisa, como inserir as informações numa tabela, por exemplo.
-
-Praticamente toda linguagem de programação moderna possui suporte a expressões regulares, nisso incluem-se JAVA, PHP e, claro, Perl. No caso específico do Perl, o suporte a expressões regulares é o que poderíamos chamar de nativo, pois ele está tão diretamente ligado à sintaxe da linguagem, que praticamente nenhuma função especial é necessária, sendo essa uma das razões para os algoritmos de processamento de texto (que remete às origens da linguagem) serem tão poderosos.
+Linha 1: Este é um exemplo de texto com aproximadamente 100 linhas.
+Linha 2: Cada linha contém uma frase simples.
+Linha 3: O objetivo é criar um texto extenso e coerente.
+Linha 4: Podemos falar sobre vários temas diferentes.
+Linha 5: Por exemplo, tecnologia e seu impacto no mundo.
+Linha 6: A inteligência artificial tem revolucionado muitas indústrias.
+Linha 7: No setor da saúde, ela auxilia em diagnósticos médicos.
+Linha 8: No setor financeiro, ela ajuda a prever tendências de mercado.
+Linha 9: No entretenimento, algoritmos personalizam conteúdo para usuários.
+Linha 10: A educação também se beneficia com IA adaptativa.
+Linha 11: Mas nem tudo são benefícios, há desafios a serem enfrentados.
+Linha 12: Um deles é a segurança e privacidade dos dados.
+Linha 13: Outra questão importante é o impacto no mercado de trabalho.
+Linha 14: Algumas profissões podem desaparecer com a automação.
+Linha 15: Outras, porém, surgem para acompanhar as novas demandas.
+Linha 16: A tecnologia está sempre evoluindo e devemos nos adaptar.
+Linha 17: Outro tema relevante é a sustentabilidade.
+Linha 18: O aquecimento global preocupa cientistas do mundo todo.
+Linha 19: Medidas para reduzir emissões de carbono são essenciais.
+Linha 20: Energias renováveis são uma alternativa viável.
+Linha 21: Energia solar e eólica são exemplos populares.
+Linha 22: O transporte elétrico também tem ganhado espaço.
+Linha 23: Carros elétricos poluem menos que os convencionais.
+Linha 24: Empresas investem em pesquisas para melhorar baterias.
+Linha 25: A reciclagem é outra solução para reduzir o lixo.
+Linha 26: O consumo consciente também faz diferença.
+Linha 27: Pequenas atitudes individuais impactam o planeta.
+Linha 28: Economia também é um assunto muito discutido.
+Linha 29: Inflação e taxas de juros afetam o poder de compra.
+Linha 30: O mercado de criptomoedas vem crescendo rapidamente.
+Linha 31: O Bitcoin foi a primeira criptomoeda criada.
+Linha 32: Hoje, existem milhares de outras moedas digitais.
+Linha 33: Blockchain é a tecnologia por trás das criptomoedas.
+Linha 34: Ela garante segurança e transparência nas transações.
+Linha 35: Mas há discussões sobre regulação do setor.
+Linha 36: Governos estudam formas de controlar esse mercado.
+Linha 37: Outra questão financeira é a educação sobre investimentos.
+Linha 38: Muitos jovens buscam aprender a investir desde cedo.
+Linha 39: O mercado de ações pode ser uma opção interessante.
+Linha 40: Fundos imobiliários são outra alternativa.
+Linha 41: Investimentos diversificados ajudam a reduzir riscos.
+Linha 42: A leitura é uma forma de aprender sobre diversos temas.
+Linha 43: Livros podem nos levar a mundos imaginários.
+Linha 44: Também ajudam a desenvolver vocabulário e criatividade.
+Linha 45: Clássicos da literatura são sempre uma boa escolha.
+Linha 46: Mas há livros modernos igualmente fascinantes.
+Linha 47: Ficção científica nos faz refletir sobre o futuro.
+Linha 48: Fantasia nos transporta para universos mágicos.
+Linha 49: O gênero policial prende a atenção com mistérios.
+Linha 50: Biografias ensinam sobre a vida de pessoas inspiradoras.
+Linha 51: A história é um tema sempre relevante.
+Linha 52: Conhecer o passado nos ajuda a entender o presente.
+Linha 53: Grandes civilizações deixaram legados valiosos.
+Linha 54: O Egito Antigo, Roma e Grécia influenciaram nossa cultura.
+Linha 55: Revoluções mudaram os rumos da humanidade.
+Linha 56: A Revolução Industrial transformou a economia global.
+Linha 57: Hoje vivemos a Era da Informação.
+Linha 58: A internet conectou o mundo de maneira incrível.
+Linha 59: Redes sociais influenciam a forma como nos comunicamos.
+Linha 60: Mas também trazem desafios, como fake news.
+Linha 61: A cibersegurança se tornou um tema essencial.
+Linha 62: Protegemos nossos dados com senhas e criptografia.
+Linha 63: Empresas investem pesado na segurança digital.
+Linha 64: A robótica avança em diversos setores.
+Linha 65: Robôs realizam cirurgias com alta precisão.
+Linha 66: Indústrias automatizam processos para ganhar eficiência.
+Linha 67: O futuro reserva muitas inovações surpreendentes.
+Linha 68: A exploração espacial é outro campo fascinante.
+Linha 69: Missões a Marte estão em andamento.
+Linha 70: Empresas privadas estão investindo no turismo espacial.
+Linha 71: Quem sabe no futuro possamos viver fora da Terra?
+Linha 72: A ciência segue buscando respostas para o universo.
+Linha 73: O telescópio James Webb promete grandes descobertas.
+Linha 74: A busca por vida extraterrestre continua.
+Linha 75: A humanidade nunca para de explorar e aprender.

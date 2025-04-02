@@ -8,11 +8,11 @@ contigo conosco para perante por perante através um uma uns umas que quem cujo 
 é são está estão era eram na nas no nos os as não ou sim certamente ao aos mais maior maioria mas porém contudo todavia cada qualquer que faz
 isso isto aquele aquela aqueles aquelas há havia sob sobre durante entre após antes desde contra perante até bem mal pouco poucos com por qual 
 pouca poucas muito muitos muita muitas então depois ainda quando enquanto porque seja sendo fui foi fomos foram me te se nos vos lhe lhes quais
-mãe todo toda todos todas algum alguma alguns algumas);
+mãe todo toda todos todas algum alguma alguns algumas também outro outras outros outra);
 
 my %frequencia;
 
-open(my $arq, "<", "/home/felipe/Perl/Projeto/Texto") or die "Erro ao abrir o arquivo: $!";
+open(my $arq, "<", "/root/Perl/Projeto/Texto") or die "Erro ao abrir o arquivo: $!";
 my @linhas;
 
 while (my $linha = <$arq>) {
@@ -36,7 +36,7 @@ close($arq);
 # Ordena as palavras pela frequencia, da maior para menor
 my @palavras_chave = sort { $frequencia{$b} <=> $frequencia{$a} } keys %frequencia;
 
-my %destaques = map { $_ => 1 } @palavras_chave[0..5];
+my %destaques = map { $_ => 1 } @palavras_chave[0..4];
 
 foreach my $linha (@linhas) {
     # /\e[1;31m deixa a palavra com a cor vermelha e em negrito
