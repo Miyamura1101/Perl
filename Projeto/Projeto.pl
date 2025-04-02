@@ -36,8 +36,7 @@ do{
                 print "Digite algo: ";
                 system("perl Procurar_Threads.pl");
             }
-        print "----------------------------------------------------------------------------------\n";
-    } elsif ($opcao == 5 ){
+    } elsif ($opcao == 5){
         $open = 0;
     }else {
        print "Opção inválida!\n";
